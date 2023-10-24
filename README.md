@@ -1,3 +1,7 @@
+Taken from ChrisTitusTech and Reconfigured
+==========================================
+<https://github.com/ChrisTitusTech/dwm-titus>
+
 dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
