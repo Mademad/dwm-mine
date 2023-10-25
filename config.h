@@ -52,12 +52,17 @@ static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
-	 */
+	 * to get the tag mask number right it goes like this [1 -> 2 -> 4 -> 8 -> 16] & f=[2^x-1]
+	 * also see example variations below :  
+	 * tag-1=1  tag-2=2  tag-1-and-2=3  tag-3=4  tag-1-and-3=5  tag-2-and-3=6  tag-1-2-and-3=7  tag-4=8
+	 * tag-1-and-4=9 tag-2-and-4=10 tag-1-2-and-4=11 tag-3-and-4=12  tag-1-3-and-4=13  tag-2-3-and-4=14
+	 * tag-1-2-3-and-4=15 tag-5=16 tag-1-and-5=17
+	*/
 	/* class             instance      title           tags mask  isfloating  isterminal  noswallow  monitor */
+	{ "Alacritty",       NULL,         NULL,           0,         0,          1,           0,        -1 },
 	{ "Thorium-browser", NULL,         NULL,           2,         0,          0,           0,        -1 },
 	{ "brave",           NULL,         NULL,           2,         0,          0,           0,        -1 },
-        { "Thunar",          NULL,         NULL,           3,         0,          0,           0,        -1 },
-	{ "thunar",          NULL,         NULL,           3,         0,          0,           0,        -1 },
+        { "Thunar",          NULL,         NULL,           4,         0,          0,           0,        -1 },
 	{ "steam",           NULL,         NULL,           1 << 8,    0,          0,           0,        -1 },
 	{ NULL,              NULL,         "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
@@ -137,7 +142,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_3,                       2)
 	TAGKEYS(                        XK_4,                       3)
 	TAGKEYS(                        XK_5,                       4)
-	{ MODKEY|ShiftMask,             XK_q,       quit,           {0} },
+	{ MODKEY|Mod1Mask,              XK_q,       quit,           {0} },
+	{ MODKEY|Mod1Mask,              XK_r,       quit,           {1} },
 	{ MODKEY|ControlMask|ShiftMask, XK_r,       spawn,          SHCMD("systemctl reboot")},
 	{ MODKEY|ControlMask|ShiftMask, XK_s,       spawn,          SHCMD("systemctl shutdown now")},
 };
