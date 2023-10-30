@@ -70,7 +70,7 @@ static const Rule rules[] = {
         { "Thunar",          NULL,         NULL,           4,         0,          0,           0,        -1 },
 	{ "mpv",             NULL,         NULL,           8,         0,          0,           0,        -1 },
 	{ "Audacious",       NULL,         NULL,           8,         0,          0,           0,        -1 },
-	{ "MComix",       NULL,         NULL,           8,         0,          0,           0,        -1 },
+	{ "MComix",          NULL,         NULL,           8,         0,          0,           0,        -1 },
 	{ "steam",           NULL,         NULL,           1 << 8,    0,          0,           0,        -1 },
 	{ NULL,              NULL,         "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
