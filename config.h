@@ -152,8 +152,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_5,                       4)
 	{ MODKEY|Mod1Mask,              XK_q,       quit,           {0} },
 	{ MODKEY|Mod1Mask,              XK_r,       quit,           {1} },
-	{ MODKEY|ControlMask|ShiftMask, XK_r,       spawn,          SHCMD("systemctl reboot")},
-	{ MODKEY|ControlMask|ShiftMask, XK_s,       spawn,          SHCMD("systemctl poweroff")},
+	{ MODKEY|ControlMask|ShiftMask, XK_q,       spawn,          SHCMD("poweroff")},
+	{ MODKEY|ControlMask|ShiftMask, XK_r,       spawn,          SHCMD("reboot")},
 };
 
 /* button definitions */
